@@ -9,6 +9,7 @@ class Enkaidu < Formula
   license "MPL-2.0"
 
   depends_on "crystal" => :build
+  depends_on "bdw-gc"
   depends_on "libevent"
   depends_on "libyaml"
   depends_on "node"
