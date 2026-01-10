@@ -13,8 +13,8 @@ class Enkaidu < Formula
   depends_on "libevent"
   depends_on "libxml2"
   depends_on "libyaml"
-  depends_on "pcre2"
   depends_on "node" => :build
+  depends_on "pcre2"
 
   def install
     system("cd webui && npm i && npm run build && cd ..")
