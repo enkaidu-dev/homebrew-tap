@@ -11,8 +11,8 @@ class Enkaidu < Formula
   depends_on "crystal" => :build
   depends_on "bdw-gc"
   depends_on "libevent"
-  depends_on "libyaml"
   depends_on "libxml2"
+  depends_on "libyaml"
   depends_on "node"
   depends_on "pcre2"
 
