@@ -1,10 +1,28 @@
-# Enkaidu-dev Tap
+# `enkaidu-dev` Tap for Homebrew
 
-## How do I install these formulae?
+> Enkaidu itself is [here](https://github.com/enkaidu-dev/enkaidu)
 
-`brew install enkaidu-dev/tap/<formula>`
+## How do I install Enkaidu?
 
-Or `brew tap enkaidu-dev/tap` and then `brew install <formula>`.
+### Direct
+
+```sh
+brew install enkaidu-dev/tap/enkaidu
+```
+
+### Tap first
+
+```sh
+brew tap enkaidu-dev/tap
+```
+
+And then
+
+```sh
+brew install enkaidu
+```
+
+### Bundle
 
 Or, in a `brew bundle` `Brewfile`:
 
@@ -12,7 +30,3 @@ Or, in a `brew bundle` `Brewfile`:
 tap "enkaidu-dev/tap"
 brew "<formula>"
 ```
-
-## Documentation
-
-`brew help`, `man brew` or check [Homebrew's documentation](https://docs.brew.sh).
