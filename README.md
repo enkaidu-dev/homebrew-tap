@@ -30,3 +30,7 @@ Or, in a `brew bundle` `Brewfile`:
 tap "enkaidu-dev/tap"
 brew "<formula>"
 ```
+
+## Development
+
+To trigger `publish` workflow, remember to label the PR with `pr-pull` before merging.
