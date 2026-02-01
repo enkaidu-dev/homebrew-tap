@@ -4,8 +4,8 @@
 class Enkaidu < Formula
   desc "CLI tool to use self-hosted AI models for local editing and refinement tasks"
   homepage "https://github.com/enkaidu-dev/enkaidu"
-  url "https://github.com/enkaidu-dev/enkaidu/archive/refs/tags/0.8.4.tar.gz"
-  sha256 "cc74a5d67215c25f890a8eab1f16abfb79f18f3a90ceaac99f6730064d9d94c3"
+  url "https://github.com/enkaidu-dev/enkaidu/archive/refs/tags/0.8.5.tar.gz"
+  sha256 "f21e07049be9b4fbf29744e1eb45f0e709acc3530e82dbd9748e5ba32102beb2"
   license "MPL-2.0"
 
   depends_on "crystal" => :build
