@@ -7,6 +7,7 @@ class Enkaidu < Formula
   url "https://github.com/enkaidu-dev/enkaidu/archive/refs/tags/0.9.6.tar.gz"
   sha256 "e1976b5c8292b07b6ea780e00e9ffd6c7797f29a1e34f0e2bb6898a504a019d3"
   license "MPL-2.0"
+  revision 1
 
   depends_on "crystal" => :build
   depends_on "node" => :build
