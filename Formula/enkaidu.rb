@@ -9,6 +9,13 @@ class Enkaidu < Formula
   license "MPL-2.0"
   revision 1
 
+  bottle do
+    root_url "https://github.com/enkaidu-dev/homebrew-tap/releases/download/enkaidu-0.9.6_1"
+    sha256 cellar: :any, arm64_sequoia: "46368095668487e73105d1ea063ea3d36ff36166f5281d42ddfb3c164eba0564"
+    sha256 cellar: :any, arm64_linux:   "dcd90c424943902f1c86664a98f30cc49b757372cb13dec2559963392f007eff"
+    sha256 cellar: :any, x86_64_linux:  "7f315bc0c1de4580fdd81ddb502a619243e6eaaf6d38a45d56dc7fa78885fe4d"
+  end
+
   depends_on "crystal" => :build
   depends_on "node" => :build
   depends_on "bdw-gc"
