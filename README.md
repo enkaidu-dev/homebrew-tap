@@ -70,7 +70,7 @@ sequenceDiagram
     PR->>CI: triggers on push/PR
     par per matrix OS
         CI->>CI: macos-latest (arm64): build + bottle
-        CI->>CI: macos-13 (x86_64): build + bottle
+        CI->>CI: macos-15-intel (x86_64): build + bottle
         CI->>CI: ubuntu-latest (x86_64): build + bottle
         CI->>CI: ubuntu-24.04-arm (arm64): build + bottle
     end
@@ -93,3 +93,31 @@ sequenceDiagram
 
 Once a bottle hash matches the installer's OS/arch, `brew install` skips
 compiling Crystal/Node entirely and just downloads the binary.
+
+### macOS vs Linux bottle matching
+
+- **macOS bottles are tagged per OS version** (e.g. `arm64_sequoia`). A bottle
+  built on `macos-15` only matches users on macOS 15. New major macOS
+  release → no match → falls back to source build until we rebuild bottles
+  for it. `check-new-macos.yml` runs monthly to detect this and open a PR
+  automatically (see below).
+- **Linux bottles are tagged by arch only** (`x86_64_linux`, `arm64_linux`),
+  not distro or version. Homebrew on Linux doesn't link against host system
+  libraries (besides glibc/gcc), so one bottle from `ubuntu-latest` covers
+  Ubuntu, Debian, Fedora, etc. No per-distro CI matrix needed.
+
+### `macos-latest` is a rolling alias — handle with care
+
+GitHub silently repoints `macos-latest` to newer macOS versions over time
+(it's how `macos-13` got Intel support quietly deprecated under us). We
+intentionally left `macos-latest` unpinned so bottles auto-track new
+arm64 macOS releases, but it's worth periodically confirming what it
+currently resolves to via the GitHub Actions runner-images changelog.
+
+### Auto-detecting new macOS releases
+
+`check-new-macos.yml` runs monthly (and on demand) on `macos-latest`,
+compares the runner's macOS major version against `.macos-version-tracked`,
+and if newer, bumps `revision` and opens a PR — feeding the same
+`tests.yml`/`publish.yml` pipeline above. It stops short of auto-labeling
+`pr-pull`, so a human still confirms CI is green before bottles publish.
