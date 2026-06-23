@@ -2,5 +2,5 @@
 # Inspired by github.com/nickthecook/homebrew-crops :-)
 #
 actions:
-  url: grep url Formula/enkaidu.rb | grep -o 'https[^"]*'
+  url: grep "^\s*url" Formula/enkaidu.rb | grep -o 'https[^"]*'
   sum: wget -O - -q "$(ops url)" | sha256sum
