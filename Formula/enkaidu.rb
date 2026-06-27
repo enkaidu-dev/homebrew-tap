@@ -9,10 +9,10 @@ class Enkaidu < Formula
   license "MPL-2.0"
 
   bottle do
-    root_url "https://github.com/enkaidu-dev/homebrew-tap/releases/download/enkaidu-0.9.7"
-    sha256 cellar: :any, arm64_sequoia: "55f5b39f37738566f67479d63fa5edcdeb27cdf7854d39ecb02f75885ceb990f"
-    sha256 cellar: :any, arm64_linux:   "2100a298cfaaa3354106a8ece1b5e0db0ae5bc909f6013bb47fe03e87887784a"
-    sha256 cellar: :any, x86_64_linux:  "16856059f0e598f221161867246d54e2abb584cee6a867f78110876664595e76"
+    root_url "https://github.com/enkaidu-dev/homebrew-tap/releases/download/enkaidu-0.9.8"
+    sha256 cellar: :any, arm64_tahoe:  "f997b16aa00bf132dc476631dae5680808502dd896b124112bdc3c15fac7877e"
+    sha256 cellar: :any, arm64_linux:  "b571d28549a19fd3f456b722ee4e3a3396c04fc62e7f4a5658ac00ca04058892"
+    sha256 cellar: :any, x86_64_linux: "8cfe42ed6b46a754e2d0c7c0eefb20ff5f95045465e27dcd2e976e0f2e99c630"
   end
 
   depends_on "crystal" => :build
