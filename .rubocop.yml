@@ -1,0 +1,5 @@
+#
+# Brew style guide required double-quote strings unless escaping
+#
+StringLiterals:
+  Enabled: false
