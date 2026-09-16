@@ -31,8 +31,8 @@ class Enkaidu < Formula
     # local_crystal_path = `crystal env CRYSTAL_PATH`.chomp
     system("cd webui && npm i && npm run build && cd ..")
     # system("CRYSTAL_PATH='src:lib:#{local_crystal_path}' shards build --release")
-    system("shards install --production")
-    system("shards --production build --release")
+    system("shards", "install", "--production")
+    system("shards", "--production", "build", "--release")
     bin.install "bin/enkaidu"
   end
 
