@@ -27,11 +27,13 @@ class Enkaidu < Formula
   depends_on "zlib-ng-compat" if OS.linux?
 
   def install
+    # Build the web UI dist
     system("cd webui && npm i && npm run build && cd ..")
-    # local_crystal_path = `crystal env CRYSTAL_PATH`.chomp
-    system("cd webui && npm i && npm run build && cd ..")
-    # system("CRYSTAL_PATH='src:lib:#{local_crystal_path}' shards build --release")
-    system("shards", "install", "--production")
+    # Skip postinstall since mime_map's script fails
+    system("shards", "install", "--production", "--skip-postinstall")
+    # Manually run the mime_map code gen
+    system("cd lib/mime_map && make gen && cd ..")
+    # Now build Enkaidu
     system("shards", "--production", "build", "--release")
     bin.install "bin/enkaidu"
   end
