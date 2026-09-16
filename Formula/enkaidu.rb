@@ -4,8 +4,8 @@
 class Enkaidu < Formula
   desc "CLI tool to use self-hosted AI models for local editing and refinement tasks"
   homepage "https://enkaidu.dev"
-  url "https://github.com/enkaidu-dev/enkaidu/archive/refs/tags/0.9.12.tar.gz"
-  sha256 "2e5b8e264f4953d1a28fc95be27a618834985421d1822a6ebbf01968da50c8f2"
+  url "https://github.com/enkaidu-dev/enkaidu/archive/refs/tags/0.9.13.tar.gz"
+  sha256 "a5c4c2f515e1e07bef23faafedff18b3a930218240107228e592c54112a2d890"
   license "MPL-2.0"
 
   bottle do
