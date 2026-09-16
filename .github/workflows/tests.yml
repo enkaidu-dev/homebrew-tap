@@ -10,7 +10,8 @@ jobs:
   test-bot:
     strategy:
       matrix:
-        os: [ubuntu-latest, ubuntu-24.04-arm, macos-latest, macos-15-intel]
+        # Remove macos-intel, the bottle building is slow and fails often.
+        os: [ubuntu-latest, ubuntu-24.04-arm, macos-latest]
     runs-on: ${{ matrix.os }}
     permissions:
       actions: read
